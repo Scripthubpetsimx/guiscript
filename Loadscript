@@ -1,0 +1,39 @@
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/Scripthubpetsimx/guiscript/main/LibUI")()
+ 
+local win = DiscordLib:Window("discord library")
+ 
+local serv = win:Server("Preview", "")
+ 
+local btns = serv:Channel("Buttons")
+ 
+local textbs = serv:Channel("Key Checker")
+ 
+textbs:Textbox(
+    "Key Here",
+    "Type here!",
+    true,
+    function(t)
+        print(t)
+    end
+)
+ 
+local lbls = serv:Channel("Free Key - Find the right 1")
+ 
+lbls:Label("Key_Ask.codegayulfj   Key_Ask.code9beubbhut 
+  Key_Ask.codeudusjudjsb.  Key_Ask.codeVisu008Cater  
+ Key_Ask.codePSXlua66mainllad")
+ 
+local bnds = serv:Channel("Binds")
+ 
+bnds:Bind(
+    "Kill Server",
+    Enum.KeyCode.RightShift,
+    function()
+        print("Put your key")
+    end
+)
+ 
+serv:Channel("by dawid#7205")
+ 
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
