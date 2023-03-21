@@ -6,13 +6,26 @@
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local UIGradient = Instance.new("UIGradient")
+local UIGradient_2 = Instance.new("UIGradient")
 local TextLabel = Instance.new("TextLabel")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local TextButton = Instance.new("TextButton")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+local TextButton_2 = Instance.new("TextButton")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
 local TextBox = Instance.new("TextBox")
 local UICorner_2 = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
-local TextButton_2 = Instance.new("TextButton")
+local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+local TextBox_2 = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
 
 --Properties:
 
@@ -20,154 +33,144 @@ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 217, 80)
-Frame.Position = UDim2.new(0.0135644004, 0, 0.033932168, 0)
-Frame.Size = UDim2.new(0, 930, 0, 506)
+Frame.Active = true
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.495323867, 0, 0.507414877, 0)
+Frame.Size = UDim2.new(0.92202878, 0, 0.909756124, 0)
 
+UICorner.CornerRadius = UDim.new(0.100000001, 0)
 UICorner.Parent = Frame
 
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 15.000
+UIStroke.Parent = Frame
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(251, 255, 11)), ColorSequenceKeypoint.new(0.04, Color3.fromRGB(237, 241, 21)), ColorSequenceKeypoint.new(0.06, Color3.fromRGB(234, 238, 23)), ColorSequenceKeypoint.new(0.11, Color3.fromRGB(229, 232, 28)), ColorSequenceKeypoint.new(0.16, Color3.fromRGB(222, 225, 34)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(217, 220, 37)), ColorSequenceKeypoint.new(0.24, Color3.fromRGB(214, 217, 40)), ColorSequenceKeypoint.new(0.28, Color3.fromRGB(209, 212, 44)), ColorSequenceKeypoint.new(0.35, Color3.fromRGB(201, 203, 51)), ColorSequenceKeypoint.new(0.41, Color3.fromRGB(195, 197, 55)), ColorSequenceKeypoint.new(0.46, Color3.fromRGB(187, 189, 62)), ColorSequenceKeypoint.new(0.49, Color3.fromRGB(255, 162, 0)), ColorSequenceKeypoint.new(0.53, Color3.fromRGB(245, 159, 8)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(232, 154, 19)), ColorSequenceKeypoint.new(0.62, Color3.fromRGB(219, 150, 30)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(118, 118, 118))}
+UIGradient.Parent = UIStroke
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(58, 61, 59)), ColorSequenceKeypoint.new(0.05, Color3.fromRGB(123, 129, 124)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(123, 129, 124)), ColorSequenceKeypoint.new(0.23, Color3.fromRGB(85, 89, 86)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(88, 92, 89)), ColorSequenceKeypoint.new(0.37, Color3.fromRGB(91, 96, 92)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(93, 97, 94)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(71, 74, 71)), ColorSequenceKeypoint.new(0.53, Color3.fromRGB(64, 67, 64)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(56, 59, 56)), ColorSequenceKeypoint.new(0.71, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.86, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.94, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient_2.Rotation = 15
+UIGradient_2.Parent = Frame
+
 TextLabel.Parent = Frame
+TextLabel.Active = true
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.326375723, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = "KEY SYSTEM"
+TextLabel.Position = UDim2.new(0.120050386, 0, 0, 0)
+TextLabel.Size = UDim2.new(0.771440506, 0, 0.176943704, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "KEY SYSTEM "
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 35.000
+TextLabel.TextSize = 100.000
+
+UIAspectRatioConstraint.Parent = TextLabel
+UIAspectRatioConstraint.AspectRatio = 6.682
 
 TextLabel_2.Parent = Frame
+TextLabel_2.Active = true
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.309297919, 0, 0.149019599, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Position = UDim2.new(0.201467708, 0, 0.176943704, 0)
+TextLabel_2.Size = UDim2.new(0.571145892, 0, 0.153442979, 0)
 TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "for free Key system you need to use this 10 Key and only one is the right key. HAVE FUN!!"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextSize = 14.000
+TextLabel_2.Text = "To get key you have 2 option get from discord and get free key on th following keys bellow"
+TextLabel_2.TextColor3 = Color3.fromRGB(254, 254, 254)
+TextLabel_2.TextSize = 31.000
+TextLabel_2.TextWrapped = true
 
-TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0.0777988583, 0, 0.254901975, 0)
-TextLabel_3.Size = UDim2.new(0, 147, 0, 155)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "FREE_key2173627 FREE_Key1794630 FREE_Key367918 FREE_Key23687 FREE_Key2165736 FREE_Key8123678 DON_AYGFSU DON_TA&^TRU DON_YGAUY DON_ YAFSYI JACK_AJSGDU JACK_UGADY JAY_AHSGDYUSADG"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-TextBox.Position = UDim2.new(0.461100578, 0, 0.31764707, 0)
-TextBox.Size = UDim2.new(0, 200, 0, 50)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "KEY HERE"
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextSize = 14.000
-
-UICorner_2.Parent = TextBox
+UIAspectRatioConstraint_2.Parent = TextLabel_2
+UIAspectRatioConstraint_2.AspectRatio = 6.727
 
 TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.461100578, 0, 0.45023638, 0)
-TextButton.Size = UDim2.new(0, 75, 0, 50)
+TextButton.BackgroundColor3 = Color3.fromRGB(214, 206, 255)
+TextButton.Position = UDim2.new(0.422643155, 0, 0.477211803, 0)
+TextButton.Size = UDim2.new(0.174929813, 0, 0.0670241266, 0)
 TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "SUBMIT FREE"
+TextButton.Text = "SUBMIT"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 
-TextButton_2.Parent = Frame
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.Position = UDim2.new(0.595256209, 0, 0.45023641, 0)
-TextButton_2.Size = UDim2.new(0, 75, 0, 50)
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "BUY KEY"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextSize = 14.000Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local TextBox = Instance.new("TextBox")
-local UICorner_2 = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
-local TextButton_2 = Instance.new("TextButton")
-
---Properties:
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 217, 80)
-Frame.Position = UDim2.new(0.118618615, 0, 0.181818187, 0)
-Frame.Size = UDim2.new(0, 527, 0, 255)
-
-UICorner.Parent = Frame
-
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.326375723, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = "KEY SYSTEM"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 35.000
-
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.309297919, 0, 0.149019599, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "for free Key system you need to use this 10 Key and only one is the right key. HAVE FUN!!"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextSize = 14.000
-
-TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0.0777988583, 0, 0.254901975, 0)
-TextLabel_3.Size = UDim2.new(0, 147, 0, 155)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "FREE_key2173627 FREE_Key1794630 FREE_Key367918 FREE_Key23687 FREE_Key2165736 FREE_Key8123678 DON_AYGFSU DON_TA&^TRU DON_YGAUY DON_ YAFSYI JACK_AJSGDU JACK_UGADY JAY_AHSGDYUSADG"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-TextBox.Position = UDim2.new(0.461100578, 0, 0.31764707, 0)
-TextBox.Size = UDim2.new(0, 200, 0, 50)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "KEY HERE"
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextSize = 14.000
-
-UICorner_2.Parent = TextBox
-
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.461100578, 0, 0.545098066, 0)
-TextButton.Size = UDim2.new(0, 75, 0, 50)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "SUBMIT FREE"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
+UIAspectRatioConstraint_3.Parent = TextButton
+UIAspectRatioConstraint_3.AspectRatio = 4.000
 
 TextButton_2.Parent = Frame
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.Position = UDim2.new(0.688804567, 0, 0.545098066, 0)
-TextButton_2.Size = UDim2.new(0, 75, 0, 50)
+TextButton_2.BackgroundColor3 = Color3.fromRGB(230, 208, 255)
+TextButton_2.Position = UDim2.new(0.422643155, 0, 0.576407492, 0)
+TextButton_2.Size = UDim2.new(0.174929813, 0, 0.0670241266, 0)
 TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "BUY KEY"
+TextButton_2.Text = "SUBMIT"
 TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.TextSize = 14.000
+
+UIAspectRatioConstraint_4.Parent = TextButton_2
+UIAspectRatioConstraint_4.AspectRatio = 4.000
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 89, 39)
+TextBox.Position = UDim2.new(0.609296858, 0, 0.477211803, 0)
+TextBox.Size = UDim2.new(0.174929813, 0, 0.0670241266, 0)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = "INPUT KEY HERE"
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UICorner_2.Parent = TextBox
+
+UIAspectRatioConstraint_5.Parent = TextBox
+UIAspectRatioConstraint_5.AspectRatio = 4.000
+
+TextBox_2.Parent = Frame
+TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 8)
+TextBox_2.Position = UDim2.new(0.609296858, 0, 0.576407492, 0)
+TextBox_2.Size = UDim2.new(0.174929813, 0, 0.0670241266, 0)
+TextBox_2.Font = Enum.Font.SourceSans
+TextBox_2.Text = "INPUT PAID KEY HERE"
+TextBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.TextSize = 14.000
+
+UICorner_3.Parent = TextBox_2
+
+UIAspectRatioConstraint_6.Parent = TextBox_2
+UIAspectRatioConstraint_6.AspectRatio = 4.000
+
+UIAspectRatioConstraint_7.Parent = Frame
+UIAspectRatioConstraint_7.AspectRatio = 1.533
+
+TextLabel_3.Parent = Frame
+TextLabel_3.Active = true
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0, 211, 0, 317)
+TextLabel_3.Size = UDim2.new(0, 215, 0, 187)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "    FREE_KEY>Val-736556    FREE_KEY>Val-365678    FREE_KEY>Val-9990898    FREE_KEY>Val-7767453    FREE_KEY>Val-565456    FREE_KEY>Val-678766    FREE_KEY>Val-767"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextSize = 20.000
+TextLabel_3.TextWrapped = true
+
+TextLabel_4.Parent = Frame
+TextLabel_4.Active = true
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0, 218, 0, 490)
+TextLabel_4.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "EXP DATE: 03/20/2023 -- more key coming on March 29"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+-- Scripts:
+
+local function CFIFIE_fake_script() -- Frame.Rotate 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		Uigradient.Rotation += 2	
+	end)
+end
+coroutine.wrap(CFIFIE_fake_script)()
