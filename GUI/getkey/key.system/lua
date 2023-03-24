@@ -42,7 +42,216 @@ Frame.Size = UDim2.new(0.92202878, 0, 0.909756124, 0)
 UICorner.CornerRadius = UDim.new(0.100000001, 0)
 UICorner.Parent = Frame
 
-UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Color = Color3.fromRGB(255, 255, 255)-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local Folder = Instance.new("Folder")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local Folder_2 = Instance.new("Folder")
+local Free = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIGradient_2 = Instance.new("UIGradient")
+local Premium = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIGradient_3 = Instance.new("UIGradient")
+local TextBox = Instance.new("TextBox")
+local UIGradient_4 = Instance.new("UIGradient")
+local UICorner_4 = Instance.new("UICorner")
+local Folder_3 = Instance.new("Folder")
+local Title = Instance.new("TextLabel")
+local Time = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.Active = true
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Size = UDim2.new(0.947546542, 0, 0.879687488, 0)
+
+UICorner.CornerRadius = UDim.new(0.100000001, 0)
+UICorner.Parent = Frame
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(225, 185, 41)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 200, 200))}
+UIGradient.Rotation = 20
+UIGradient.Parent = Frame
+
+Folder.Parent = Frame
+
+TextLabel.Parent = Folder
+TextLabel.Active = true
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0443323888, 0, 0.294849008, 0)
+TextLabel.Size = UDim2.new(0.312789649, 0, 0.408525765, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Buying our key is like donating appreciating our SCRIPT thank you for using our script "
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Folder
+TextLabel_2.Active = true
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.435935169, 0, 0.346358806, 0)
+TextLabel_2.Size = UDim2.new(0.229050681, 0, 0.0888099447, 0)
+TextLabel_2.Font = Enum.Font.Unknown
+TextLabel_2.Text = "FREE KEY"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+TextLabel_3.Parent = Folder
+TextLabel_3.Active = true
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.466721565, 0, 0.412078112, 0)
+TextLabel_3.Size = UDim2.new(0.172135144, 0, 0.207815275, 0)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "⚫ FREE_KEY>data.876498      ⚫ FREE_KEY>data.833567      ⚫ FREE_KEY>data.998378      ⚫ FREE_KEY>data.983761      ⚫ FREE_KEY>data.3746278      ⚫ FREE_KEY>data.9889336     ⚫ FREE_KEY>data.6635267"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+TextLabel_4.Parent = Folder
+TextLabel_4.Active = true
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.118219703, 0, 0.0301953815, 0)
+TextLabel_4.Size = UDim2.new(0.743798971, 0, 0.126110122, 0)
+TextLabel_4.Font = Enum.Font.FredokaOne
+TextLabel_4.Text = "KEY SYSTEM CHECKPOINT"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 56.000
+TextLabel_4.TextWrapped = true
+
+Folder_2.Parent = Frame
+
+Free.Name = "Free"
+Free.Parent = Folder_2
+Free.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Free.Position = UDim2.new(0.663754404, 0, 0.639431655, 0)
+Free.Size = UDim2.new(0.246291056, 0, 0.0888099447, 0)
+Free.Font = Enum.Font.SourceSans
+Free.Text = "FREE KEY SUBMIT"
+Free.TextColor3 = Color3.fromRGB(0, 0, 0)
+Free.TextSize = 14.000
+
+UICorner_2.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_2.Parent = Free
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(251, 255, 39)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(39, 107, 255))}
+UIGradient_2.Parent = Free
+
+Premium.Name = "Premium"
+Premium.Parent = Folder_2
+Premium.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Premium.Position = UDim2.new(0.663754404, 0, 0.531083405, 0)
+Premium.Size = UDim2.new(0.246291056, 0, 0.0888099447, 0)
+Premium.Font = Enum.Font.SourceSans
+Premium.Text = "PREMIUM KEY SUBMIT"
+Premium.TextColor3 = Color3.fromRGB(0, 0, 0)
+Premium.TextSize = 14.000
+
+UICorner_3.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_3.Parent = Premium
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 23, 6)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 209, 26))}
+UIGradient_3.Parent = Premium
+
+TextBox.Parent = Folder_2
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.Position = UDim2.new(0.664985836, 0, 0.422735333, 0)
+TextBox.Size = UDim2.new(0.246291056, 0, 0.0888099447, 0)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = "PUT KEY HERE"
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient_4.Parent = TextBox
+
+UICorner_4.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_4.Parent = TextBox
+
+Folder_3.Parent = Frame
+
+Title.Name = "Title"
+Title.Parent = Folder_3
+Title.Active = true
+Title.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 36, 0, 471)
+Title.Size = UDim2.new(0.215504676, 0, 0.0266429838, 0)
+Title.Text = "Server Time"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+Time.Name = "Time"
+Time.Parent = Folder_3
+Time.Active = true
+Time.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Time.BackgroundTransparency = 1.000
+Time.Position = UDim2.new(0, 36, 0, 486)
+Time.Size = UDim2.new(0.215504676, 0, 0.0266429838, 0)
+Time.Text = "2 Hour(s), 16 Minutes, 34 Seconds"
+Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+-- Scripts:
+
+local function JCLNIM_fake_script() -- Frame.Rotation 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		UIgradient.Rotation += 	2
+	end)
+end
+coroutine.wrap(JCLNIM_fake_script)()
+local function SIMPAC_fake_script() -- Time.Script 
+	local script = Instance.new('Script', Time)
+
+	while true do
+		wait()
+		local seconds = math.floor(workspace.DistributedGameTime)
+		local minutes = math.floor(workspace.DistributedGameTime / 60)
+		local hours = math.floor(workspace.DistributedGameTime / 60 / 60)
+		local seconds = seconds - (minutes * 60)
+		local minutes = minutes - (hours * 60)
+		if hours < 1 then 
+			if minutes < 1 then
+				script.Parent.Text = seconds .. " Seconds"
+			else
+				script.Parent.Text = minutes .. " Minutes, " .. seconds .. " Seconds"
+			end
+		else 
+			script.Parent.Text = hours .. " Hour(s), " .. minutes .. " Minutes, " .. seconds .. " Seconds"
+		end
+	end
+	
+	--yay! i have full right for this now!!!
+end
+coroutine.wrap(SIMPAC_fake_script)()
+
 UIStroke.Thickness = 15.000
 UIStroke.Parent = Frame
 
