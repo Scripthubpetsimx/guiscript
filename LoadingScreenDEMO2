@@ -1,168 +1,42 @@
 local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local StarterGui = game:GetService("StarterGui")
-local ContextActionService = game:GetService("ContextActionService")
-local UserInputService = game:GetService("UserInputService")
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
+local TweenService = game:GetService("TweenService")
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- Disable core GUIs (chat, player list, etc.)
-StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
-
--- Create full-screen ScreenGui
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "FullScreenLoading"
 screenGui.IgnoreGuiInset = true
-screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-screenGui.ResetOnSpawn = false
 screenGui.Parent = playerGui
 
--- Black background that captures all input
-local background = Instance.new("TextButton")
-background.Name = "Background"
-background.Size = UDim2.new(1, 0, 1, 0)
-background.BackgroundColor3 = Color3.new(0, 0, 0)
-background.BorderSizePixel = 0
-background.Text = ""
-background.Modal = true
-background.Active = true
-background.Selectable = true
-background.Parent = screenGui
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
+textLabel.Font = Enum.Font.GothamMedium
+textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
+textLabel.Text = "Loading"
+textLabel.TextSize = 28
+textLabel.Parent = screenGui
 
--- Main text label
-local title = Instance.new("TextLabel")
-title.Name = "Title"
-title.Text = "Grow A Garden"
-title.Font = Enum.Font.GothamBold
-title.TextSize = 48
-title.TextColor3 = Color3.new(1, 1, 1)
-title.BackgroundTransparency = 1
-title.Size = UDim2.new(1, 0, 0.3, 0)
-title.Position = UDim2.new(0, 0, 0.3, 0)
-title.Parent = screenGui
+local loadingRing = Instance.new("ImageLabel")
+loadingRing.Size = UDim2.new(0, 256, 0, 256)
+loadingRing.BackgroundTransparency = 1
+loadingRing.Image = "rbxassetid://4965945816"
+loadingRing.AnchorPoint = Vector2.new(0.5, 0.5)
+loadingRing.Position = UDim2.new(0.5, 0, 0.5, 0)
+loadingRing.Parent = screenGui
 
--- Loading text
-local loadingText = Instance.new("TextLabel")
-loadingText.Name = "LoadingText"
-loadingText.Text = "Script Loading"
-loadingText.Font = Enum.Font.Gotham
-loadingText.TextSize = 24
-loadingText.TextColor3 = Color3.new(0.8, 0.8, 0.8)
-loadingText.BackgroundTransparency = 1
-loadingText.Size = UDim2.new(1, 0, 0.1, 0)
-loadingText.Position = UDim2.new(0, 0, 0.5, 0)
-loadingText.Parent = screenGui
+-- Remove the default loading screen
+ReplicatedFirst:RemoveDefaultLoadingScreen()
 
--- Loading bar container
-local loaderContainer = Instance.new("Frame")
-loaderContainer.Name = "LoaderContainer"
-loaderContainer.Size = UDim2.new(0.4, 0, 0, 20)
-loaderContainer.Position = UDim2.new(0.3, 0, 0.6, 0)
-loaderContainer.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
-loaderContainer.BorderSizePixel = 0
-loaderContainer.Parent = screenGui
+local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+local tween = TweenService:Create(loadingRing, tweenInfo, {Rotation = 360})
+tween:Play()
 
--- Animated loading bar
-local loaderBar = Instance.new("Frame")
-loaderBar.Name = "LoaderBar"
-loaderBar.Size = UDim2.new(0, 0, 1, 0)
-loaderBar.BackgroundColor3 = Color3.fromRGB(80, 180, 80)
-loaderBar.BorderSizePixel = 0
-loaderBar.Parent = loaderContainer
+task.wait(5)  -- Force screen to appear for a minimum number of seconds
 
--- Loading dots
-local dotsContainer = Instance.new("Frame")
-dotsContainer.Name = "DotsContainer"
-dotsContainer.Size = UDim2.new(0, 120, 0, 30)
-dotsContainer.Position = UDim2.new(0.5, -60, 0.65, 0)
-dotsContainer.BackgroundTransparency = 1
-dotsContainer.Parent = screenGui
-
-local dot1 = Instance.new("TextLabel")
-dot1.Name = "Dot1"
-dot1.Text = "●"
-dot1.Font = Enum.Font.GothamBold
-dot1.TextSize = 30
-dot1.TextColor3 = Color3.new(1, 1, 1)
-dot1.BackgroundTransparency = 1
-dot1.Size = UDim2.new(0, 30, 1, 0)
-dot1.Position = UDim2.new(0, 0, 0, 0)
-dot1.Parent = dotsContainer
-
-local dot2 = dot1:Clone()
-dot2.Name = "Dot2"
-dot2.Position = UDim2.new(0.33, 0, 0, 0)
-dot2.Parent = dotsContainer
-
-local dot3 = dot1:Clone()
-dot3.Name = "Dot3"
-dot3.Position = UDim2.new(0.66, 0, 0, 0)
-dot3.Parent = dotsContainer
-
--- Animation variables
-local dots = {dot1, dot2, dot3}
-local currentDot = 1
-local animationSpeed = 0.7
-local elapsedTime = 0
-local pulseDirection = 1
-local pulseValue = 1
-
--- Block all player input
-local function blockInput()
-    return Enum.ContextActionResult.Sink
+if not game:IsLoaded() then
+ game.Loaded:Wait()
 end
 
-ContextActionService:BindAction("BlockAllInput", blockInput, false, 
-    Enum.KeyCode.W, Enum.KeyCode.A, Enum.KeyCode.S, Enum.KeyCode.D,
-    Enum.KeyCode.Space, Enum.KeyCode.E, Enum.KeyCode.R, Enum.KeyCode.F,
-    Enum.KeyCode.Q, Enum.KeyCode.Tab, Enum.KeyCode.Escape, Enum.KeyCode.LeftShift,
-    Enum.KeyCode.One, Enum.KeyCode.Two, Enum.KeyCode.Three, Enum.KeyCode.Four
-)
-
-UserInputService.MouseIconEnabled = false
-
--- Animation loop
-RunService.Heartbeat:Connect(function(deltaTime)
-    elapsedTime += deltaTime
-    
-    -- Pulsating title effect
-    pulseValue += pulseDirection * deltaTime * 0.5
-    if pulseValue > 1.1 then
-        pulseValue = 1.1
-        pulseDirection = -1
-    elseif pulseValue < 0.9 then
-        pulseValue = 0.9
-        pulseDirection = 1
-    end
-    title.TextTransparency = 1 - pulseValue
-    
-    -- Dot animation
-    for i, dot in ipairs(dots) do
-        if i == currentDot then
-            dot.TextTransparency = 0
-        else
-            dot.TextTransparency = 0.7
-        end
-    end
-    
-    -- Loading bar animation
-    local barWidth = (math.sin(elapsedTime * 2) * 0.5 + 0.5) * loaderContainer.AbsoluteSize.X
-    loaderBar.Size = UDim2.new(0, barWidth, 1, 0)
-    
-    -- Update dot counter
-    if elapsedTime > animationSpeed then
-        elapsedTime = 0
-        currentDot = (currentDot % #dots) + 1
-    end
-end)
-
--- Prevent player from closing the GUI
-background.MouseButton1Click:Connect(function()
-    -- Do nothing - prevent closing
-end)
-
--- Additional security: Prevent escape menu
-game:GetService("GuiService").MenuOpened:Connect(function()
-    game:GetService("GuiService"):CloseInspectMenu()
-end)
+screenGui:Destroy()
